@@ -1,5 +1,6 @@
 import Databus from './databus.js'
 import Background from './runtime/background.js'
+import Land from './runtime/land.js'
 const databus = new Databus()
 
 import ResourceLoader from './base/resourceLoader.js'
@@ -19,15 +20,19 @@ export default class Main {
     if (this.status) return
     this.status = true
     this.bg = new Background()
+    this.land = new Land()
     this.bg.render()
+    this.land.render()
   }
   updata () {
     databus.ctx.clearRect(0,0,databus.canvas.width,databus.canvas.height)
     this.bg.update()
     this.bg.render()
+    this.land.update()
+    this.land.render()
   }
   loop () {
-    wx.setPreferredFramesPerSecond(30)
+    wx.setPreferredFramesPerSecond(20)
     requestAnimationFrame(() => {
       if (databus.isload) {
         this.init()

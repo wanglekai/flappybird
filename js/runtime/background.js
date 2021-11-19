@@ -9,8 +9,8 @@ export default class Background {
         this.x = 0
         this.y = 0
         this.w = this.bg.width
-        this.h = this.bg.height
-        // this.h = databus.canvas.height
+        // this.h = this.bg.height
+        this.h = databus.canvas.height
     }
     update () {
         this.x -= databus.speed
