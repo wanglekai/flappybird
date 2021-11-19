@@ -6,5 +6,6 @@ export default class Databus {
         instance = this
         this.canvas
         this.ctx
+        this.imgObj = {}
     }
 }
