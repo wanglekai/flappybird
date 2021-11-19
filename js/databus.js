@@ -7,5 +7,6 @@ export default class Databus {
         this.canvas
         this.ctx
         this.imgObj = {}
+        this.isload = false
     }
 }
