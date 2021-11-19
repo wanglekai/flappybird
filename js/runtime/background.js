@@ -11,6 +11,7 @@ export default class Background {
         this.w = this.bg.width
         // this.h = this.bg.height
         this.h = databus.canvas.height
+        databus.addActor(this)
     }
     update () {
         this.x -= databus.speed

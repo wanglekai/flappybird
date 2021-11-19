@@ -9,6 +9,7 @@ export default class Land {
         this.w = this.land.width
         this.h = this.land.height
         // this.h = databus.canvas.height
+        databus.addActor(this)
     }
     update () {
         this.x -= databus.speed

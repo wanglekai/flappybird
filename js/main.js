@@ -26,10 +26,10 @@ export default class Main {
   }
   updata () {
     databus.ctx.clearRect(0,0,databus.canvas.width,databus.canvas.height)
-    this.bg.update()
-    this.bg.render()
-    this.land.update()
-    this.land.render()
+    databus.actors.forEach(item => {
+      item.update()
+      item.render()
+    })
   }
   loop () {
     wx.setPreferredFramesPerSecond(20)

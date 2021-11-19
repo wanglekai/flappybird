@@ -9,5 +9,9 @@ export default class Databus {
         this.imgObj = {}
         this.isload = false
         this.speed = 2
+        this.actors = []
+    }
+    addActor (actor) {
+        this.actors.push(actor)
     }
 }
