@@ -21,11 +21,17 @@ export default class Main {
     this.bg = new Background()
     this.bg.render()
   }
+  updata () {
+    databus.ctx.clearRect(0,0,databus.canvas.width,databus.canvas.height)
+    this.bg.update()
+    this.bg.render()
+  }
   loop () {
-    wx.setPreferredFramesPerSecond(10)
+    wx.setPreferredFramesPerSecond(30)
     requestAnimationFrame(() => {
       if (databus.isload) {
         this.init()
+        this.updata()
       }
       this.loop()
     })

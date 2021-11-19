@@ -8,5 +8,6 @@ export default class Databus {
         this.ctx
         this.imgObj = {}
         this.isload = false
+        this.speed = 2
     }
 }
