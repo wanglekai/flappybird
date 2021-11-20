@@ -2,6 +2,9 @@ import Databus from './databus.js'
 import Background from './runtime/background.js'
 import Land from './runtime/land.js'
 import Pipe from './runtime/pipe.js'
+import Bird from './player/bird.js'
+
+wx.setPreferredFramesPerSecond(30)
 
 const databus = new Databus()
 
@@ -26,8 +29,10 @@ export default class Main {
     this.status = true
     this.bg = new Background()
     this.land = new Land()
-    this.bg.render()
-    this.land.render()
+    this.bird = new Bird()
+    // this.bg.render()
+    // this.land.render()
+    // this.bird.render()
   }
   updata () {
     databus.ctx.clearRect(0,0,databus.canvas.width,databus.canvas.height)
@@ -37,7 +42,6 @@ export default class Main {
     })
   }
   loop () {
-    wx.setPreferredFramesPerSecond(20)
     requestAnimationFrame(() => {
       console.log(this.aniId);
       if (databus.isload) {
