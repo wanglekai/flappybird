@@ -10,6 +10,7 @@ export default class Databus {
         this.isload = false
         this.speed = 2
         this.actors = []
+        this.bird
     }
     addActor (actor) {
         this.actors.push(actor)

@@ -44,7 +44,6 @@ export default class Main {
   }
   loop () {
     requestAnimationFrame(() => {
-      console.log(this.aniId);
       if (databus.isload) {
         this.init()
         // const pipe = new Pipe()

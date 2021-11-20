@@ -21,7 +21,23 @@ export default class Pipe {
     // 销毁点
     if (this.x <= - this.w) {
       this.die()
-    } 
+    }
+    // 更新碰撞检测盒
+    // 小鸟的检测盒
+    const birdL = databus.bird.x + 6
+    const birdR = databus.bird.x + 40
+    const birdT = databus.bird.y + 10
+    const birdB = databus.bird.y + 40
+    // 管子的检测盒
+    this.lX = this.x
+    this.rX = this.x + this.w
+    this.tY1 = this.h1
+    this.bY2 = this.y2 
+
+    // 碰撞
+    if (birdR >= this.lX && birdL <= this.rX && (birdT <= this.tY1 || birdB >= this.bY2 )) {
+      console.log('game over!')
+    }
   }
   render () {
     databus.ctx.drawImage(this.image1, 0, this.sy1, this.w, this.h1, this.x, this.y1, this.w, this.h1)

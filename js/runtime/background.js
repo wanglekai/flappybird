@@ -20,7 +20,6 @@ export default class Background {
         }
     }
     render () {
-        console.log('render');
         databus.ctx.drawImage(this.bg, this.x, this.y, this.w, this.h)
         databus.ctx.drawImage(this.bg, this.x + this.w, this.y,this.w, this.h)
         databus.ctx.drawImage(this.bg, this.x + this.w * 2, this.y,this.w, this.h)

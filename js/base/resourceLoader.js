@@ -21,8 +21,6 @@ export default class ResourceLoader {
            databus.imgObj[k].onload = () => {
                this.count++
                if (this.count >= this.maxcount) {
-                   console.log('图片资源以全部加载')
-                   console.log('图片个数: ', this.count)
                    databus.isload = true
                }
            }

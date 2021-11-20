@@ -21,8 +21,9 @@ export default class Bird {
         this.rotate = 0
         this.w = this.image.width
         this.h = this.image.height
-        this.ey = databus.canvas.height - this.h - databus.imgObj.land.height + 11
+        this.ey = databus.canvas.height - this.h - databus.imgObj.land.height + 11;
         databus.addActor(this)
+        databus.bird = this
     }
     update() {
         this.cur += 1

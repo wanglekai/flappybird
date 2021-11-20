@@ -18,7 +18,6 @@ export default class Land {
         }
     }
     render () {
-        console.log('render');
         databus.ctx.drawImage(this.land, this.x, this.y, this.w, this.h)
         databus.ctx.drawImage(this.land, this.x + this.w, this.y,this.w, this.h)
         databus.ctx.drawImage(this.land, this.x + this.w * 2, this.y,this.w, this.h)
