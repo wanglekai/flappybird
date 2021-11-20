@@ -11,8 +11,15 @@ export default class Databus {
         this.speed = 2
         this.actors = []
         this.bird
+        this.scene = 0
     }
     addActor (actor) {
         this.actors.push(actor)
     }
+    reset () {
+        this.actors = []
+        this.bird = null
+        this.scene = 0
+        this.speed = 2
+      }
 }

@@ -36,6 +36,7 @@ export default class Pipe {
 
     // 碰撞
     if (birdR >= this.lX && birdL <= this.rX && (birdT <= this.tY1 || birdB >= this.bY2 )) {
+      databus.scene = 2
       console.log('game over!')
     }
   }
