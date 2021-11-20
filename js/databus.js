@@ -12,6 +12,7 @@ export default class Databus {
         this.actors = []
         this.bird
         this.scene = 0
+        this.score = 0
     }
     addActor (actor) {
         this.actors.push(actor)
@@ -21,5 +22,6 @@ export default class Databus {
         this.bird = null
         this.scene = 0
         this.speed = 2
+        this.score = 0
       }
 }

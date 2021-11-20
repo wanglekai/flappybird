@@ -3,6 +3,7 @@ import Background from './runtime/background.js'
 import Land from './runtime/land.js'
 import Pipe from './runtime/pipe.js'
 import Bird from './player/bird.js'
+import Score from "./player/score.js"
 
 wx.setPreferredFramesPerSecond(30)
 
@@ -31,6 +32,7 @@ export default class Main {
     this.bg = new Background()
     this.land = new Land()
     this.bird = new Bird()
+    this.score = new Score()
     // this.bg.render()
     // this.land.render()
     // this.bird.render()
@@ -41,6 +43,7 @@ export default class Main {
       item.update()
       item.render()
     })
+    this.score.render()
   }
   loop () {
     requestAnimationFrame(() => {

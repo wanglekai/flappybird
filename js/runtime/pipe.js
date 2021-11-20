@@ -39,6 +39,12 @@ export default class Pipe {
       databus.scene = 2
       console.log('game over!')
     }
+
+    // 小鸟经过管子添加 1 分
+    if (birdR >= this.x && this.noPass) {
+      databus.score++
+      this.noPass = false
+    }
   }
   render () {
     databus.ctx.drawImage(this.image1, 0, this.sy1, this.w, this.h1, this.x, this.y1, this.w, this.h1)
