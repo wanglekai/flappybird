@@ -23,6 +23,7 @@ export default class Main {
    this.resource = new ResourceLoader()
    this.status = false
    this.loop()
+   this.bindEvent()
   }
   init () {
     if (this.status) return
@@ -57,6 +58,12 @@ export default class Main {
         this.updata()
       }
       this.loop()
+    })
+  }
+  bindEvent () {
+    wx.onTouchStart((result) => {
+      this.bird.bindFly()
+     
     })
   }
 }
