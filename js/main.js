@@ -4,6 +4,8 @@ import Land from './runtime/land.js'
 import Pipe from './runtime/pipe.js'
 import Bird from './player/bird.js'
 import Score from "./player/score.js"
+import Over from "./player/over.js"
+import Panel from "./player/panel.js"
 
 wx.setPreferredFramesPerSecond(30)
 
@@ -33,6 +35,7 @@ export default class Main {
     this.land = new Land()
     this.bird = new Bird()
     this.score = new Score()
+    this.over = null
     // this.bg.render()
     // this.land.render()
     // this.bird.render()
@@ -53,7 +56,6 @@ export default class Main {
         if (databus.scene === 0) {
           // 初始化
           this.init()
-          
         } else if (databus.scene === 1) {
           this.aniId++
           // 每隔 100 帧 添加一对管子
@@ -65,9 +67,14 @@ export default class Main {
           databus.speed = 0
           databus.bird.cur = 0
           databus.bird.rotate = Math.PI / 2
-          
-        }   
-        
+          if (!this.over) {
+            this.over = new Over()
+            this.panel = new Panel()
+          }
+          if (databus.score > databus.max) {
+            databus.max = databus.score
+          }
+        }
         this.update()
       }
       this.loop()

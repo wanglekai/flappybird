@@ -13,6 +13,7 @@ export default class Databus {
         this.bird
         this.scene = 0
         this.score = 0
+        this.max = 0
     }
     addActor (actor) {
         this.actors.push(actor)
